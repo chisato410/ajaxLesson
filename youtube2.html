@@ -6,9 +6,48 @@
     <title>Document</title>
 
     <style>
-      .body-wrap {
+      body {
         display: block;
         margin-inline: auto;
+      }
+
+      #player {
+        margin-left: 40px;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .btns {
+        display: flex;
+      }
+
+      .btns li {
+        margin-right: 10px;
+      }
+
+      .speed {
+        display: flex;
+        align-items: center;
+      }
+
+      .volume {
+        padding-left: 40px;
+      }
+
+      .memo {
+        margin-top: 50px;
+        margin-left: 40px;
+        margin: 50px 0 0 40px;
+      }
+
+      .memoList {
+        margin-top: 40px;
+      }
+
+      textarea {
+        padding: 10px;
       }
     </style>
   </head>
@@ -19,13 +58,16 @@
     <div class="body-wrap">
       <div id="player"></div>
       <nav>
-        <ul>
+        <ul class="btns">
           <li id="doplay">再生</li>
           <li id="dostop">停止</li>
           <li id="dopause">一時停止</li>
           <li id="mute">ミュート</li>
           <li id="do10sNext">10秒先へ</li>
           <li id="do10sPrev">10秒戻る</li>
+        </ul>
+
+        <ul>
           <li>
             <select id="MovieId" class="ytMovie" name="ytMovie">
               <option selected>選択してください。</option>
@@ -35,7 +77,8 @@
               <option value="XbfGem5GN7M">のめりこめ、震えろ。 Tempalay</option>
             </select>
           </li>
-          <li>
+          <li class="speed">
+            <p>再生速度を選択してください。</p>
             <form id="doSpeed">
               <input type="radio" id="mslow" name="speed" value="0.25" />
               <label for="mslow">0.25</label>
@@ -56,7 +99,8 @@
             </form>
           </li>
         </ul>
-        <label
+
+        <label class="volume"
           >ボリューム<input
             type="range"
             min="0"
@@ -68,8 +112,9 @@
           <span id="volumeNum"></span>
         </label>
       </nav>
-      <div>
-        <p>メモを追加</p>
+
+      <div class="memo">
+        <h3>メモを追加</h3>
         <textarea
           id="memoText"
           rows="2"
@@ -78,7 +123,7 @@
         ></textarea
         ><br />
         <button id="addMemo">＋ メモを追加</button>
-        <p>メモ一覧</p>
+        <h3 class="memoList">メモ一覧</h3>
         <ul id="memoList"></ul>
       </div>
     </div>
